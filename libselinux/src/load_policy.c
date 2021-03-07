@@ -347,7 +347,7 @@ int selinux_init_load_policy(int *enforce)
 	 * If necessary, change the kernel enforcing status to match 
 	 * the desired mode. 
 	 */
-	orig_enforce = rc = security_getenforce();
+	orig_enforce = rc = security_getenforce_impl();
 	if (rc < 0)
 		goto noload;
 	if (orig_enforce != *enforce) {

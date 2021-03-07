@@ -700,7 +700,7 @@ static int relabel_tty(const char *ttyn, security_context_t new_context,
 		       security_context_t * new_tty_context)
 {
 	int fd, rc;
-	int enforcing = security_getenforce();
+	int enforcing = security_getenforce_impl();
 	security_context_t tty_con = NULL;
 	security_context_t new_tty_con = NULL;
 
@@ -1079,7 +1079,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	if (security_getenforce() < 0) {
+	if (security_getenforce_impl() < 0) {
 		fprintf(stderr, _("Could not determine enforcing mode.\n"));
 		return -1;
 	}

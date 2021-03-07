@@ -640,7 +640,7 @@ class SELinuxGui():
 
     def selinux_status(self):
         try:
-            self.status = selinux.security_getenforce()
+            self.status = selinux.security_getenforce_impl()
         except OSError:
             self.status = DISABLED
         if self.status == DISABLED:

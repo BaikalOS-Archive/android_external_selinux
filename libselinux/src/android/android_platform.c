@@ -944,7 +944,7 @@ static int seapp_context_lookup(enum seapp_kind kind,
 			    "%s:  No match for app with uid %d, seinfo %s, name %s\n",
 			    __FUNCTION__, uid, seinfo, pkgname);
 
-		if (security_getenforce() == 1)
+		if (security_getenforce_impl() == 1)
 			goto err;
 	}
 

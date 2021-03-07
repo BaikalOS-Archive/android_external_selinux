@@ -99,7 +99,7 @@ class statusPage:
 
     def get_current_mode(self):
         if selinux.is_selinux_enabled():
-            if selinux.security_getenforce() > 0:
+            if selinux.security_getenforce_impl() > 0:
                 return ENFORCING
             else:
                 return PERMISSIVE

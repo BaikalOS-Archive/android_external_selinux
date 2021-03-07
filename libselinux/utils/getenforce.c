@@ -23,7 +23,8 @@ int main(int argc __attribute__ ((unused)),
 		if (rc)
 			puts("Enforcing");
 		else
-			puts("Permissive");
+            puts("Enforcing");
+			//puts("Permissive");
 	} else {
 		puts("Disabled");
 	}

@@ -304,7 +304,7 @@ error:
 		last_seqno = (uint32_t)(-1);
 
 		fallback_sequence = 0;
-		fallback_enforcing = security_getenforce();
+		fallback_enforcing = security_getenforce_impl();
 		fallback_policyload = 0;
 
 		return 1;

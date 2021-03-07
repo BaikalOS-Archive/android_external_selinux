@@ -610,6 +610,14 @@
   }
 }
 
+%exception security_getenforce_impl {
+  $action
+  if (result < 0) {
+     PyErr_SetFromErrno(PyExc_OSError);
+     SWIG_fail;
+  }
+}
+
 
 %exception security_setenforce {
   $action

@@ -11,7 +11,14 @@
 
 int security_getenforce(void)
 {
-	int fd, ret, enforce = 0;
+    return 1;
+}
+
+
+int security_getenforce_impl(void)
+{
+    return 0;
+	/*int fd, ret, enforce = 0;
 	char path[PATH_MAX];
 	char buf[20];
 
@@ -34,7 +41,8 @@ int security_getenforce(void)
 	if (sscanf(buf, "%d", &enforce) != 1)
 		return -1;
 
-	return !!enforce;
+	return !!enforce;*/
 }
 
 hidden_def(security_getenforce)
+hidden_def(security_getenforce_impl)

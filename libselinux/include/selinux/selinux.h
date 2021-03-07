@@ -334,7 +334,10 @@ extern int security_canonicalize_context_raw(const char * con,
 					     char ** canoncon);
 
 /* Get the enforce flag value. */
-extern int security_getenforce(void);
+//extern int security_getenforce(void);
+
+/* Get the enforce flag value. */
+extern int security_getenforce_impl(void);
 
 /* Set the enforce flag value. */
 extern int security_setenforce(int value);

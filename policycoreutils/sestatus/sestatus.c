@@ -279,7 +279,7 @@ int main(int argc, char **argv)
 	}
 
 	printf_tab("Current mode:");
-	rc = security_getenforce();
+	rc = security_getenforce_impl();
 	switch (rc) {
 	case 1:
 		printf("enforcing\n");

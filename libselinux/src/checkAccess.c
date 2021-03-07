@@ -93,7 +93,7 @@ int selinux_check_passwd_access(access_vector_t requested)
 		freecon(user_context);
 	}
 
-	if (status != 0 && security_getenforce() == 0)
+	if (status != 0 && security_getenforce_impl() == 0)
 		status = 0;
 
 	return status;
